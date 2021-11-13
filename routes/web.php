@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('oportalu');
 });
+Route::get('/ankete', function () {
+    return view('ankete');
+});
+Route::get('/pregled', function () {
+    return view('pregled');
+});
+Route::get('/pravilnik', function () {
+    return view('pravilnik');
+});
+Route::get('/registracija', function () {
+    return view('registracija');
+});
+Route::get('/vesti', function () {
+    return view('vesti');
+});
+
