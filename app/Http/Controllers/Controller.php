@@ -12,39 +12,5 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 
-    public function oportalu()
-    {
-        return view('oportalu');
-    }
 
-    
-    public function ankete()
-    {
-        return view('ankete');
-    }
-
-    
-    public function pregled()
-    {
-        return view('pregled');
-
-    }
-
-    
-    public function pravilnik()
-    {
-        return view('pravilnik');
-    }
-
-    
-    public function registracija()
-    {
-        return view('registracija');
-    }
-
-    
-    public function vesti()
-    {
-        return view('vesti');
-    }
 }

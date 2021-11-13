@@ -3,18 +3,18 @@
     <head>
        @yield('head')
 
-        
+
             <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-    
-        <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" />
-    
 
-        
-        
+        <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" />
+
+
+
+
          <title>
              @yield('title')
          </title>
@@ -30,12 +30,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="oportalu.blade.php">O portalu</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="pregled.blade.php">Pregled događaja</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="vesti.blade.php">Vesti</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="ankete.blade.php">Ankete</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="pravilnik.blade.php">Pravilnik</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="registracija.blade.php">Registracija</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="oportalu">O portalu</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="pregled">Pregled događaja</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="vesti">Vesti</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="ankete">Ankete</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="pravilnik">Pravilnik</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="registracija">Registracija</a></li>
 
 
                     </ul>
@@ -56,7 +56,7 @@
             </div>
         </header>
         <div class="container">
-           
+
 
             <div class="heading">
                 @yield('heading')
@@ -68,4 +68,3 @@
         </div>
     </body>
 </html>
-                
