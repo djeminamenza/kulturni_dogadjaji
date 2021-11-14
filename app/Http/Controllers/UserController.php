@@ -9,9 +9,9 @@ class UserController extends Controller
         return view('oportalu');
     }
 
-    public function pregled()
+    public function dogadjaji()
     {
-        return view('pregled');
+        return view('dogadjaji');
     }
 
     public function vesti()

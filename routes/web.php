@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/',[UserController::class,'oportalu']);
 Route::get('oportalu',[UserController::class,'oportalu']);
-Route::get('pregled',[UserController::class,'pregled']);
+Route::get('dogadjaji',[UserController::class,'dogadjaji']);
 Route::get('vesti',[UserController::class,'vesti']);
 Route::get('ankete',[UserController::class,'ankete']);
 Route::get('pravilnik',[UserController::class,'pravilnik']);
@@ -27,3 +28,7 @@ Route::get('pravilnik',[UserController::class,'pravilnik']);
 
 Route::view('/registracija', 'registracija');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
