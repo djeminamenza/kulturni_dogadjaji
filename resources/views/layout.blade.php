@@ -40,13 +40,35 @@
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="dogadjaji">Događaji</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="vesti">Vesti</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="ankete">Ankete</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="pravilnik">Pravilnik</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="pravilnik">Pravilnik</a></li>
+
                     @if (Route::has('login'))
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="login">Prijava</a></li>
-                    @else
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="register">Registracija</a></li>
                     @endif
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="register">Registracija</a></li>
+
+
+{{--                     @if (Auth::check())
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="logout">Odjava</a></li>
+                    @endif --}}
+
+{{--                Laravel | How to check if a user is logged in, inside a blade file?
+                    Only Login and Guest
+                    @auth
+                    // The user is login...
+                    @endauth
+                    @guest
+                    // The user is not login...
+                    @endguest
+
+                    Check Login and Guest With Guard
+                    @auth('admin')
+                    // The user is login with admin...
+                    @endauth
+                    @guest('admin')
+                        // The user is not login with admin...
+                    @endguest --}}
+
                 </ul>
             </div>
         </div>
