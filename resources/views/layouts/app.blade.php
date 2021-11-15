@@ -74,7 +74,15 @@
                 </div>
             </div>
         </nav>
+        <div class="col-md-2">
+    <nav class="navbar flex-column navbar-light shadow mt-0 " style="background-color: #c7daed;">
+  <a class="nav-link active" href="#">Active</a>
+  <a class="nav-link" href="#">Link</a>
+  <a class="nav-link" href="#">Link</a>
+  <a class="nav-link disabled" href="#">Disabled</a>
+</nav>
 
+</div>
         <main class="py-4">
             @yield('content')
         </main>
