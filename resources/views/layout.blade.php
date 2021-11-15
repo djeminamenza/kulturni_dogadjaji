@@ -95,6 +95,7 @@
         <div class="content">
             @yield('content')
         </div>
+
         <div class="footer">@yield('footer')</div>
     </div>
 </body>

@@ -33,3 +33,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+
+//Route::post('/users', [UserController::class, 'makeMeAnAdmin'])->name('make.Admin');
+Route::post('users/{id}','UserController@makeMeAnAdmin');
+Route::get('/users', [UserController::class, 'getUsers'])->name('get.Users');

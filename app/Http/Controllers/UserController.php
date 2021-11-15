@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -28,6 +30,18 @@ class UserController extends Controller
     {
         return view('pravilnik');
     }
+    public function getUsers()
+    {
+        $users = User::all();
+        return view('users', compact('users'));
+    }
+    public function makeMeAnAdmin($id)
+    {
+        $user = new User();
+        $user->makeAdmin($id);
+        return view('users', compact('users'));
+    }
+
 
     // public function registracija()
     // {
