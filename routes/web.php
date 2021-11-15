@@ -15,12 +15,12 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/',[UserController::class,'oportalu']);
-Route::get('oportalu',[UserController::class,'oportalu']);
-Route::get('dogadjaji',[UserController::class,'dogadjaji']);
-Route::get('vesti',[UserController::class,'vesti']);
-Route::get('ankete',[UserController::class,'ankete']);
-Route::get('pravilnik',[UserController::class,'pravilnik']);
+Route::get('/', [UserController::class, 'oportalu']);
+Route::get('oportalu', [UserController::class, 'oportalu']);
+Route::get('dogadjaji', [UserController::class, 'dogadjaji']);
+Route::get('vesti', [UserController::class, 'vesti']);
+Route::get('ankete', [UserController::class, 'ankete']);
+Route::get('pravilnik', [UserController::class, 'pravilnik']);
 
 //Route::get('registracija',[UserController::class,'registracija']);
 
@@ -34,6 +34,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
-//Route::post('/users', [UserController::class, 'makeMeAnAdmin'])->name('make.Admin');
-Route::post('users/{id}','UserController@makeMeAnAdmin');
+Route::get('/makeMeAnAdmin/{id}', [UserController::class, 'makeMeAnAdmin'])->name('make.Admin');
+//Route::post('users/{id}','UserController@makeMeAnAdmin');
 Route::get('/users', [UserController::class, 'getUsers'])->name('get.Users');

@@ -47,12 +47,7 @@ class User extends Authenticatable
     public function makeAdmin($id)
     {
         $affected = DB::table('users')
-        ->where('id', $id)
-        ->update(['is_admin' => 1]);
+            ->where('id', $id)
+            ->update(['is_admin' => 1]);
     }
-
-
-
-
-
 }

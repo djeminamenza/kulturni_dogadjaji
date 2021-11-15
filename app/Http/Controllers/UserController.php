@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -39,7 +40,8 @@ class UserController extends Controller
     {
         $user = new User();
         $user->makeAdmin($id);
-        return view('users', compact('users'));
+        //return view('users');
+        return redirect()->to('users')->with('message', 'Korisnik sa id: ' . $id . ' uspesno prebacen u admine');
     }
 
 
