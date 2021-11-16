@@ -74,13 +74,33 @@
                 </div>
             </div>
         </nav>
-        
-        <div class="d-flex justify-content-start navbar1">
-        @include('navbar')
-    </div>
-        <div class="py col-md-12">
-            @yield('content')
+        <div class="col-md-2">
+    <nav class="navbar flex-column navbar-light shadow mt-0 " style="background-color: #c7daed;">
+
+  <a class="nav-link btn btn mb-1 shadow" style="width: 150px;" href="{{ route('get.Users') }}">{{ __('Users') }}</a>
+  <a class="nav-link btn btn mb-1 shadow" style="width: 150px" href="{{ route('a.categories') }}">{{ __('Categories') }}</a>
+  <a class="nav-link btn btn mb-1 shadow" style="width: 150px" href="{{ route('a.reports') }}">{{ __('Reports') }}</a>
+  <a class="nav-link btn btn mb-1 shadow" style="width: 150px" href="{{ route('a.content') }}">{{ __('Content') }}</a>
+  <a class="nav-link btn btn mb-1 shadow" style="width: 150px" href="{{ route('a.statistics') }}">{{ __('Statistics') }}</a>
+  <div class="dropdown show dropright">
+  <a class="btn btn mb-1 shadow dropdown-toggle" style="width: 150px" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Deleting
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="{{ route('a.deletingcontent') }}">Content</a>
+    <a class="dropdown-item" href="{{ route('a.deletingnews') }}">News</a>
+    <a class="dropdown-item" href="{{ route('a.deletingevents') }}">Events</a>
+    <a class="dropdown-item" href="{{ route('a.deletingadverts') }}">Adverts</a>
+
+  </div>
 </div>
+</nav>
+
+</div>
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
 </body>
 </html>

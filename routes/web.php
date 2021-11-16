@@ -37,3 +37,11 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 Route::get('/makeMeAnAdmin/{id}', [UserController::class, 'makeMeAnAdmin'])->name('make.Admin');
 //Route::post('users/{id}','UserController@makeMeAnAdmin');
 Route::get('/users', [UserController::class, 'getUsers'])->name('get.Users');
+Route::get('/categories', [UserController::class, 'categories'])->name('a.categories');
+Route::get('/reports', [UserController::class, 'reports'])->name('a.reports');
+Route::get('/content', [UserController::class, 'content'])->name('a.content');
+Route::get('/statistics', [UserController::class, 'statistics'])->name('a.statistics');
+Route::get('deleting/content', [UserController::class, 'deletingContent'])->name('a.deletingcontent');
+Route::get('deleting/events', [UserController::class, 'deletingEvents'])->name('a.deletingevents');
+Route::get('deleting/adverts', [UserController::class, 'deletingAdverts'])->name('a.deletingadverts');
+Route::get('deleting/news', [UserController::class, 'deletingNews'])->name('a.deletingnews');

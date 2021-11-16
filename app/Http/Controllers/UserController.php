@@ -43,10 +43,43 @@ class UserController extends Controller
         //return view('users');
         return redirect()->to('users')->with('message', 'Korisnik sa id: ' . $id . ' uspesno prebacen u admine');
     }
+public function statistics()
+{
+
+    return view('statistics');
+}
 
 
-    // public function registracija()
-    // {
-    //     return view('registracija');
-    // }
+    
+    public function categories()
+    {
+        return view('categories');
+    }
+    
+    public function deletingNews()
+    {
+            return view('deleting/news');
+        }
+        public function deletingEvents()
+    {
+            return view('deleting/events');
+        }
+        public function deletingAdverts()
+    {
+            return view('deleting/adverts');
+        }
+        public function deletingContent()
+    {
+            return view('deleting/content');
+        }
+        public function reports()
+        {
+            return view('reports');
+        }
+        
+    public function content()
+    {
+        return view('content');
+    }
+    
 }

@@ -3,6 +3,7 @@
 @section('title')
     Kulturni dogadjaji
 @stop
+@stop
 @section('heading')
     <h2>{{ 'Dobrodošli ' }} {{ 'na naš portal!' }}</h2>
 @stop
@@ -36,13 +37,6 @@
     </div>
     </div>
 @stop
-@section('footer')
-    <a href="https://" class="ml-1 underline">
-        Shop
-    </a>
 
-
-    <a href="https://" class="ml-1 underline">
-        Sponsor
-    </a>
+@section('footer')  
 @stop

@@ -10,12 +10,5 @@
 
 @stop
 @section('footer')
-    <a href="https://" class="ml-1 underline">
-        Shop
-    </a>
-
-
-    <a href="https://" class="ml-1 underline">
-        Sponsor
-    </a>
+   
 @stop

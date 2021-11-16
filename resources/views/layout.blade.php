@@ -14,11 +14,7 @@
         rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
 
-    <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" />
-
-
-
-
+    <link rel="stylesheet" href='{{ URL::asset("css/styles.css") }}' />
     <title>
         @yield('title')
     </title>
@@ -96,8 +92,11 @@
             @yield('content')
         </div>
 
-        <div class="footer">@yield('footer')</div>
+        <div class="footer">
+          
+            <a href="viber://chat?number=38163333333"">Kontakt</a>
+        </div>
     </div>
+   
 </body>
-
 </html>

@@ -3,6 +3,7 @@
 @section('title')
     Kulturni dogadjaji
 @stop
+@stop
 @section('heading')
     <h2>{{ 'Pravilnik ' }} {{ 'i uputstva za korišćenje portala' }}</h2>
 @stop
@@ -10,12 +11,4 @@
 
 @stop
 @section('footer')
-    <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-        Shop
-    </a>
-
-
-    <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-        Sponsor
-    </a>
 @stop
