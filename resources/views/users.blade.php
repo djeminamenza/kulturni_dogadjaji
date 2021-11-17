@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container">
-        <div class="justify-content-center">
-            <div class="col-md-8">
-                <h2>{{ 'Spisak korisnika' }}</h2>
+        
+            <div class="col-md-8 mt-5">
+                <h2 style="text-align: center; margin-bottom: 3%; font-size: 3em;">{{ 'Spisak korisnika' }}</h2>
             </div>
             {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
             <div class="col-md-8">
@@ -24,7 +24,7 @@
                             <td> {{ $u->name }}</td>
                             <td> {{ $u->email }}</td>
                             <td> {{ $u->created_at }} </td>
-                            <td><button type='button' class='btn btn-success'> <a
+                            <td><button type='button' class='btn btn-light shadow' style="background-color:#20cb9c"> <a
                                 {{-- href="{{ url('makeMeAnAdmin', ['id'=>$u->id] )}}">Make</a></button></td> --}}
                                 {{-- href = 'makeMeAnAdmin/{{ $u->id }}'>Make</a></td> --}} class="nav-link"
                                 href="{{ route('make.Admin', [$u->id]) }}">{{ __('Make') }}</a></button></td>
@@ -39,6 +39,6 @@
                 </table>
             </div>
 
-        </div>
+        
     </div>
 @endsection
