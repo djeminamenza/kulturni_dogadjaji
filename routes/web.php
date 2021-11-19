@@ -45,3 +45,7 @@ Route::get('deleting/content', [UserController::class, 'deletingContent'])->name
 Route::get('deleting/events', [UserController::class, 'deletingEvents'])->name('a.deletingevents');
 Route::get('deleting/adverts', [UserController::class, 'deletingAdverts'])->name('a.deletingadverts');
 Route::get('deleting/news', [UserController::class, 'deletingNews'])->name('a.deletingnews');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
