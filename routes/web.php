@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\TidingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +48,8 @@ Route::get('deleting/events', [UserController::class, 'deletingEvents'])->name('
 Route::get('deleting/adverts', [UserController::class, 'deletingAdverts'])->name('a.deletingadverts');
 Route::get('deleting/news', [UserController::class, 'deletingNews'])->name('a.deletingnews');
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/dogadjaji', [EventController::class, 'showEvents'])->name('show.Events');
+Route::get('/vesti', [TidingController::class, 'showTidings'])->name('show.Tidings');
