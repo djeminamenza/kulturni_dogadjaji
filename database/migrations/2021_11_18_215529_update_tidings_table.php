@@ -15,8 +15,8 @@ class UpdateTidingsTable extends Migration
     public function up()
     {
         Schema::table('tidings', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id'); //associate the address with a user
-            $table->foreign('user_id')->references('id')->on('users');
+            //$table->unsignedBigInteger('user_id'); //associate the address with a user
+            //$table->foreign('user_id')->references('id')->on('users');
         });
     }
 
