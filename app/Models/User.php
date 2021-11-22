@@ -50,4 +50,13 @@ class User extends Authenticatable
             ->where('id', $id)
             ->update(['is_admin' => 1]);
     }
+
+    public function getUserWithRoles()
+    {
+        DB::table('users')
+            ->join('contacts', 'users.id', '=', 'contacts.user_id')
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('users.id', 'contacts.phone', 'orders.price')
+            ->get();
+    }
 }

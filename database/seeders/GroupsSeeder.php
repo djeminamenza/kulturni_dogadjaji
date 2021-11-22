@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class UserRoleSeeder extends Seeder
+class GroupsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,17 +14,17 @@ class UserRoleSeeder extends Seeder
      */
     public function run()
     {
-        $userRole = [
+        $groups = [
             ['role'=>'Admin'],
             ['role'=>'Organisation'],
             ['role'=>'User']
         ];
 
-        foreach ($userRole as $key => $value) {
+        foreach ($groups as $key => $value) {
 
-            DB::table('user_role')->insert($value);
+            DB::table('Groups')->insert($value);
         }
     }
 }
 
-// execute in Terminal: php artisan db:seed --class=UserRoleSeeder
+// execute in Terminal: php artisan db:seed --class=GroupsSeeder

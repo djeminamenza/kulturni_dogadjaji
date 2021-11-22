@@ -93,10 +93,10 @@
         </div>
 
         <div class="footer">
-          
-            <a href="viber://chat?number=38163333333"">Kontakt</a>
+
+            <a href="viber://chat?number=38163333333">Kontakt</a>
         </div>
     </div>
-   
+
 </body>
 </html>
