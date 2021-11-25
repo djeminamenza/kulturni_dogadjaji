@@ -4,7 +4,15 @@
     Kulturni dogadjaji
 @stop
 @section('heading')
-    <h2>{{ 'Najnovije ' }} {{ ' vesti o predstojećim dešavanjima' }}</h2>
+
+    <div class="container">
+        <div class="row">
+            <h2 class="col-10 col-s-12">{{ 'Najnovije ' }} {{ ' vesti o predstojećim dešavanjima' }}</h2>
+            <button type='button' class='btn btn-light shadow col-2 col-s-12' style="background-color:#20cb9c">
+                <a class="nav-link" href="{{ route('add.new.Tiding') }}">{{ __('Add new tiding') }}</a>
+            </button>
+        </div>
+    </div>
 @stop
 
 @section('content')

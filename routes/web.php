@@ -53,3 +53,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/dogadjaji', [EventController::class, 'showEvents'])->name('show.Events');
 Route::get('/vesti', [TidingController::class, 'showTidings'])->name('show.Tidings');
+Route::get('user/addTiding', [TidingController::class, 'addnewTiding'])->name('add.new.Tiding');
+Route::post('/', [TidingController::class, 'store'])->name('add.Tiding');
