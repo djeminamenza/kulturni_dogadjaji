@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+
+class OrganizationController extends Controller
+{
+
+    public function home()
+    {
+        return view('organization/home');
+    }
+
+    public function add_ads()
+    {
+        return view('organization/add_ads');
+    }
+
+    public function add_event()
+    {
+        return view('organization/add_event');
+    }
+
+    public function profile()
+    {
+        return view('organization/profile');
+    }
+
+    public function survey_result()
+    {
+        return view('organization/survey_result');
+    }
+
+    public function survey()
+    {
+        return view('organization/survey');
+    }
+  
+    
+}
