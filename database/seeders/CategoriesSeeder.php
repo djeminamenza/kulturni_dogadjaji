@@ -19,7 +19,8 @@ class CategoriesSeeder extends Seeder
             ['description'=>'Projekcije'],
             ['description'=>'Izlozbe'],
             ['description'=>'Instalacije'],
-            ['description'=>'Predstave']
+            ['description'=>'Predstave'],
+            ['description'=>'Simpozijumi']
 
         ]);
   

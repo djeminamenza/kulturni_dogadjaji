@@ -55,3 +55,10 @@ Route::get('/dogadjaji', [EventController::class, 'showEvents'])->name('show.Eve
 Route::get('/vesti', [TidingController::class, 'showTidings'])->name('show.Tidings');
 Route::get('user/addTiding', [TidingController::class, 'addnewTiding'])->name('add.new.Tiding');
 Route::post('/', [TidingController::class, 'store'])->name('add.Tiding');
+
+Route::get('organization/add_ads', [OrganizationController::class, 'add_ads'])->name('a.add_ads');
+Route::get('organization/add_events', [OrganizationController::class, 'add_event'])->name('a.add_event');
+Route::get('organization/profile', [OrganizationController::class, 'profile'])->name('a.profile');
+Route::get('organization/survey', [OrganizationController::class, 'survey'])->name('a.survey');
+Route::get('organization/survey_result', [OrganizationController::class, 'survey_result'])->name('a.survey_result');
+Route::get('organization/home', [OrganizationController::class, 'home'])->name('a.home');

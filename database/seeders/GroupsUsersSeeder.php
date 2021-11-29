@@ -21,7 +21,7 @@ class GroupsUsersSeeder extends Seeder
             ],
             [
             'groups_id'=>2,
-            'user_id'=>6
+            'user_id'=>5
             ]
             ];
 
