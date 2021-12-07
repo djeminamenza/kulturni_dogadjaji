@@ -49,37 +49,10 @@ class User extends Authenticatable
 
     public function makeAdmin($id)
     {
-        $affected = DB::table('users')
-            ->where('id', $id)
-            ->update(['is_admin' => 1]);
+        $affected = DB::table('groups_users')
+            ->where('user_id', $id)
+            ->update(['groups_id' => 1]);
     }
-
-    public function getUserWithRoles()
-    {
-        DB::table('users')
-            ->join('contacts', 'users.id', '=', 'contacts.user_id')
-            ->join('orders', 'users.id', '=', 'orders.user_id')
-            ->select('users.id', 'contacts.phone', 'orders.price')
-            ->get();
-    }
-
-    public function isAdmin($id)
-    {
-        $data = User::join('groups_users', 'groups_users.user_id', '=', $id)
-                    ->join('groups','groups.id', 'groups_users.groups_id')
-                    ->get(['groups.role']);
-        return (compact('data'));
-
-        //->select('groups_users.groups_id')
-        //->select('groups.role')
-        //->where('user_id','=',$id)
-        //->where('groups.id','=','groups_users.groups_id')
-        // ->join('groups_users',)
-        // ->join('groups','groups.id', 'groups_id')
-        // ->select('users.name')
-        //->get();
-    }
-//}
 
 public function showEvents()
     {

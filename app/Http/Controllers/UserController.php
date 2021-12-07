@@ -33,8 +33,14 @@ class UserController extends Controller
     }
     public function getUsers()
     {
-        $users = User::all();
+        $users = DB::table('users')
+                ->join('groups_users', 'groups_users.user_id', '=', 'users.id')//,'inner', true)
+                ->join('groups','groups.id', '=', 'groups_users.groups_id')//,'inner', true)
+                ->select('users.*','groups.role')
+                ->get();
         return view('users', compact('users'));
+
+
     }
     public function makeMeAnAdmin($id)
     {
@@ -49,14 +55,15 @@ public function statistics()
     return view('statistics');
 }
 
-
-
     public function categories()
-    {
-        $data = DB::table('users')
-                     ->join('groups_users', 'groups_users.user_id', '=', 3,'inner', true)
-                     ->join('groups','groups.id', '=', 1,'inner', true)
-                     ->select('groups.role')
+    {   $data = DB::table('groups_users')
+        ->select('groups_id')
+        ->where('user_id','=',3)
+        // $data = DB::table('users')
+        // ->select()
+        //              ->join('groups_users', 'groups_users.user_id', '=', 3,'inner', true)
+        //              ->join('groups','groups.id', '=', 1,'inner', true)
+        //              ->select('groups.role')
                      ->get();
         return view('categories',compact('data'));
     }

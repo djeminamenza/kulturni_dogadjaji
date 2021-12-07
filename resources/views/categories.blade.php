@@ -6,7 +6,7 @@
         @foreach ($data as $d)
         <p>
             {{-- ?=var_dump($d)?> --}}
-            {{$d->role}}
+            {{$d->groups_id}}
         </p>
         @endforeach
 
