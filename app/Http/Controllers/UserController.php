@@ -50,12 +50,17 @@ public function statistics()
 }
 
 
-    
+
     public function categories()
     {
-        return view('categories');
+        $data = DB::table('users')
+                     ->join('groups_users', 'groups_users.user_id', '=', 3,'inner', true)
+                     ->join('groups','groups.id', '=', 1,'inner', true)
+                     ->select('groups.role')
+                     ->get();
+        return view('categories',compact('data'));
     }
-    
+
     public function deletingNews()
     {
             return view('deleting/news');
@@ -76,10 +81,10 @@ public function statistics()
         {
             return view('reports');
         }
-        
+
     public function content()
     {
         return view('content');
     }
-    
+
 }
