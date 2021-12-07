@@ -47,6 +47,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function isItAdmin()
+    {
+        $id = auth()->user()->id;
+        $data = DB::table('groups_users')
+            ->join('groups','groups.id','=','groups_users.groups_id')
+            ->where('user_id', $id)
+            ->select('groups.role')
+            ->get();
+            return($data);
+    }
+
     public function makeAdmin($id)
     {
         $affected = DB::table('groups_users')

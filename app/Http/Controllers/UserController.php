@@ -49,23 +49,17 @@ class UserController extends Controller
         //return view('users');
         return redirect()->to('users')->with('message', 'Korisnik sa id: ' . $id . ' uspesno prebacen u admine');
     }
-public function statistics()
-{
-
-    return view('statistics');
-}
 
     public function categories()
-    {   $data = DB::table('groups_users')
-        ->select('groups_id')
-        ->where('user_id','=',3)
-        // $data = DB::table('users')
-        // ->select()
-        //              ->join('groups_users', 'groups_users.user_id', '=', 3,'inner', true)
-        //              ->join('groups','groups.id', '=', 1,'inner', true)
-        //              ->select('groups.role')
-                     ->get();
-        return view('categories',compact('data'));
+    {   $data = auth()->user()->isItAdmin();
+        if($data[0]->role == 'Admin'){
+            $role = 'jeste Admin je!';}
+        return view('categories',compact('role'));
+    }
+
+    public function statistics()
+    {
+        return view('statistics');
     }
 
     public function deletingNews()
