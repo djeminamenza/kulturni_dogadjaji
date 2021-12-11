@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\TidingController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,7 @@ Route::get('pravilnik', [UserController::class, 'pravilnik']);
 // Чак не мора ни да постоји функција у контролеру која враћа вју регистрација ?!
 
 Route::view('/registracija', 'registracija');
+Route::view('/prijava', 'prijava');
 
 
 Auth::routes();
@@ -52,7 +54,7 @@ Route::get('deleting/news', [UserController::class, 'deletingNews'])->name('a.de
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/dogadjaji', [EventController::class, 'showEvents'])->name('show.Events');
-Route::get('/vesti', [TidingController::class, 'showTidings'])->name('show.Tidings');
+Route::get('/vesti', [TidingController::class, 'showTidings'])->name('show.Tidings')->middleware('is_admin');
 Route::get('user/addTiding', [TidingController::class, 'addnewTiding'])->name('add.new.Tiding');
 Route::post('/', [TidingController::class, 'store'])->name('add.Tiding');
 

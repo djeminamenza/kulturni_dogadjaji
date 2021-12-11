@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Middleware;
+use Illuminate\Support\Facades\Auth;
 
 use Closure;
+use App\Models\User;
 
 class IsAdmin
 {
@@ -15,11 +17,15 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        $data = auth()->user()->isItAdmin();
-        if($data[0]->role == 'Admin')
-            {
-            return $next($request);
-            }
-        return redirect('home')->with('error',"You don't have admin access.");
+
+        if(Auth::check()){
+                $user = new User();
+                $data = $user->isItAdmin();
+                    if($data[0]->role == 'Admin')
+                    {
+                    return $next($request);
+                    }
+                    return redirect('home')->with('error',"You don't have admin access.");
+    } return redirect('login');
     }
 }
