@@ -6,7 +6,9 @@
         <div class="col-md-8 mt-5">
             <h2 style="text-align: center; margin-bottom: 3%; font-size: 3em;">{{ 'Spisak korisnika' }}</h2>
         </div>
-        {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
+        @if(!session('message')=='')
+            <div class="alert alert-success">{{ session('message') }}</div>
+        @endif
         <div class="col-md-8">
             <table class="table table-bordered">
                 <tr>

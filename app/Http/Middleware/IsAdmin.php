@@ -19,8 +19,9 @@ class IsAdmin
     {
 
         if(Auth::check()){
-                $user = new User();
-                $data = $user->isItAdmin();
+                //$user = new User();
+                $data = auth()->user()->isItAdmin();
+                //$data = $user->isItAdmin();
                     if($data[0]->role == 'Admin')
                     {
                     return $next($request);

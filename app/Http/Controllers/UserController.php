@@ -52,6 +52,7 @@ class UserController extends Controller
 
     public function categories()
     {   $data = auth()->user()->isItAdmin();
+        $role = 'nije Admin!';
         if($data[0]->role == 'Admin'){
             $role = 'jeste Admin je!';}
         return view('categories',compact('role'));
