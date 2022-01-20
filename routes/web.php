@@ -48,15 +48,19 @@ Route::get('/statistics', [UserController::class, 'statistics'])->name('a.statis
 Route::get('deleting/content', [UserController::class, 'deletingContent'])->name('a.deletingcontent');
 Route::get('deleting/events', [UserController::class, 'deletingEvents'])->name('a.deletingevents');
 Route::get('deleting/adverts', [UserController::class, 'deletingAdverts'])->name('a.deletingadverts');
-Route::get('deleting/news', [UserController::class, 'deletingNews'])->name('a.deletingnews');
+//Route::get('deleting/news', [UserController::class, 'deletingNews'])->name('a.deletingnews');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/dogadjaji', [EventController::class, 'showEvents'])->name('show.Events');
-Route::get('/vesti', [TidingController::class, 'showTidings'])->name('show.Tidings')->middleware('is_admin');
+Route::get('/vesti', [TidingController::class, 'showTidings'])->name('show.Tidings');//->middleware('is_admin');
 Route::get('user/addTiding', [TidingController::class, 'addnewTiding'])->name('add.new.Tiding');
 Route::post('/', [TidingController::class, 'store'])->name('add.Tiding');
+
+Route::get('/{id}', [TidingController::class, 'removeTiding_request'])->name('remove.Tiding.request');
+Route::get('/deleting/news', [TidingController::class, 'show_remove_requests'])->name('a.deletingnews');
+Route::get('/deleting/news/{id}', [TidingController::class, 'removeTiding'])->name('remove.Tiding');
 
 Route::get('organization/add_ads', [OrganizationController::class, 'add_ads'])->name('a.add_ads');
 Route::get('organization/add_events', [OrganizationController::class, 'add_event'])->name('a.add_event');

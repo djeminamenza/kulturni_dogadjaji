@@ -32,4 +32,30 @@ class TidingController extends Controller
         return redirect()->to('vesti')->with('message', 'Vest je uspesno dodata!');
     }
 
+    public function removeTiding_request($id){
+        Tiding::where('id', $id)
+        ->update(['delete_request'=>1]);
+
+        return redirect()->to('vesti');
+    }
+
+
+    public function show_remove_requests()
+    {
+        $tidings = Tiding::where('delete_request', 1)
+                ->get();
+
+
+        return view('/deleting/news', compact('tidings'));
+    }
+
+
+    public function removeTiding($id) {
+        $Tid = Tiding::find($id);
+
+          $Tid->delete();
+        return redirect()->to('/deleting/news');
+      }
+
+
 }

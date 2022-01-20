@@ -33,7 +33,36 @@
                         </div>
                         <div class="row">
                             <div class="col-xl-3 col-sm-12"> </div>
-                            <div class="col-xl-9 col-sm-12">{{"Autor: ".$t->id_user }}  </div>
+                            <div class="col-xl-6 col-sm-12">{{"Autor: ".$t->id_user }}  </div>
+                            <div class="col-xl-3 col-sm-12">
+
+                                @if ($t->delete_request==0)
+
+
+
+                                <button type="submit"
+                                  onclick="return confirm('Are you sure?')"
+                                  class="btn btn-sm btn-fill btn-danger">
+                                    <a class="nav-link" href="{{ route('remove.Tiding.request', ['id'=>$t->id])}}">{{ __('Remove') }}</a>
+                                </button>
+
+
+                             {{-- <button type='button' class='btn btn-light shadow' style="background-color:#cb2029">
+                                  {{ __('Delete') }}
+                                    </button> --}}
+                                @else
+                                    <button type='button disabled' class='btn btn-light shadow' style="background-color:#706868">
+                                    {{ __('Delete request sent') }}
+                                    </button>
+
+                                @endif
+
+
+
+
+
+
+                            </div>
                         </div>
 
                     @endforeach
